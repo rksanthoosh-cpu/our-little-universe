@@ -1,0 +1,2365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #11152e 0%,
+            #070817 45%,
+            #02030a 100%
+        );
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* =========================
+   BACKGROUND STARS
+========================= */
+
+body::before,
+body::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    box-shadow:
+        20px 40px white,
+        80px 120px white,
+        140px 70px white,
+        200px 180px white,
+        260px 40px white,
+        320px 150px white,
+        380px 80px white,
+        450px 200px white,
+        520px 50px white,
+        580px 130px white,
+        640px 70px white,
+        700px 190px white,
+        760px 40px white,
+        820px 150px white,
+        880px 90px white,
+        940px 210px white,
+        1000px 50px white,
+        1060px 140px white,
+        1120px 80px white,
+        1180px 190px white,
+        1240px 40px white,
+        1300px 130px white,
+        1360px 70px white,
+        1420px 180px white,
+        1480px 50px white,
+        1540px 150px white;
+
+    opacity: 0.5;
+
+    z-index: 0;
+}
+
+body::after {
+
+    transform: translateY(300px);
+
+    opacity: 0.25;
+}
+
+
+/* =========================
+   WELCOME SCREEN
+========================= */
+
+.welcome {
+
+    position: relative;
+
+    z-index: 10;
+
+    padding: 30px;
+
+    animation: fadeIn 2s ease;
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+
+.small-text {
+
+    font-size: 14px;
+
+    opacity: 0.5;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+h1 {
+
+    font-size: clamp(40px, 7vw, 72px);
+
+    margin-bottom: 15px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+}
+
+
+.subtitle {
+
+    font-size: 18px;
+
+    opacity: 0.65;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    padding: 14px 32px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+
+button:hover {
+
+    background: white;
+
+    color: #050510;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================
+   UNIVERSE
+========================= */
+
+.universe {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 20;
+
+    transition:
+        opacity 2s ease,
+        visibility 2s ease;
+}
+
+
+/* Title inside universe */
+
+.universe-title {
+
+    position: absolute;
+
+    top: 40px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.7;
+
+    white-space: nowrap;
+}
+
+
+/* Center message */
+
+.center-message {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    opacity: 1;
+}
+
+
+.center-message h2 {
+
+    font-size: clamp(28px, 5vw, 50px);
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+.center-message p {
+
+    font-size: 17px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================
+   UNIVERSE ACTIVE
+========================= */
+
+body.universe-active .welcome {
+
+    opacity: 0;
+
+    transform: scale(1.1);
+
+    pointer-events: none;
+}
+
+
+body.universe-active .universe {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome {
+
+        padding: 20px;
+    }
+
+
+    h1 {
+
+        font-size: 42px;
+    }
+
+
+    .subtitle {
+
+        font-size: 16px;
+    }
+
+
+    button {
+
+        padding: 13px 28px;
+    }
+
+
+    .center-message h2 {
+
+        font-size: 30px;
+    }
+
+
+    .center-message p {
+
+        font-size: 15px;
+    }
+
+}
+/* =========================
+   SPECIAL STARS
+========================= */
+
+.stars-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.special-star {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.4);
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    animation: starPulse 3s ease-in-out infinite;
+
+    transition: 0.3s ease;
+
+    z-index: 30;
+}
+
+.special-star:hover {
+    transform: translate(-50%, -50%) scale(1.5);
+
+    box-shadow:
+        0 0 12px white,
+        0 0 30px white,
+        0 0 60px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes starPulse {
+
+    0%, 100% {
+        opacity: 0.65;
+        box-shadow:
+            0 0 8px white,
+            0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 12px white,
+            0 0 30px white,
+            0 0 50px rgba(255, 255, 255, 0.5);
+    }
+}
+/* FIRST SPECIAL STAR */
+
+#star1 {
+    position: absolute;
+
+    left: 25%;
+    top: 35%;
+
+    width: 22px;
+    height: 22px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px white,
+        0 0 50px rgba(255, 255, 255, 0.8);
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    animation: starGlow 2.5s ease-in-out infinite;
+
+    z-index: 100;
+}
+
+
+@keyframes starGlow {
+
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.35);
+        opacity: 1;
+    }
+
+}
+/* =========================
+   MEMORY POPUP
+========================= */
+
+.memory-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.6s ease;
+
+    z-index: 200;
+}
+
+
+.memory-popup.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.memory-card {
+
+    width: min(500px, 90%);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 28, 60, 0.95),
+            rgba(7, 8, 22, 0.98)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 50px rgba(255, 255, 255, 0.08);
+
+    transform: translateY(30px) scale(0.95);
+
+    transition: 0.6s ease;
+}
+
+
+.memory-popup.show .memory-card {
+
+    transform: translateY(0) scale(1);
+
+}
+
+
+.memory-date {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.5;
+
+    margin-bottom: 20px;
+}
+
+
+.memory-card h2 {
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+
+.memory-text {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+
+    margin-bottom: 30px;
+}
+
+
+.memory-card button {
+
+    font-size: 14px;
+
+    padding: 12px 24px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .memory-card {
+
+        padding: 35px 22px;
+
+    }
+
+    .memory-card h2 {
+
+        font-size: 27px;
+
+    }
+
+    .memory-text {
+
+        font-size: 16px;
+
+    }
+
+}
+/* =========================
+   STAR #1 STORY
+========================= */
+
+.memory-story {
+    margin: 25px 0 30px;
+}
+
+.story-line {
+    opacity: 0;
+    transform: translateY(15px);
+
+    margin: 18px 0;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* Reveal each line */
+
+.memory-popup.show .story-line:nth-child(1) {
+    opacity: 0.7;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+}
+
+.memory-popup.show .story-line:nth-child(2) {
+    opacity: 0.8;
+    transform: translateY(0);
+    transition-delay: 2.2s;
+}
+
+.memory-popup.show .story-line:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 3.8s;
+}
+
+.memory-popup.show .story-line:nth-child(4) {
+    opacity: 0.8;
+    transform: translateY(0);
+    transition-delay: 5.4s;
+}
+
+.memory-popup.show .story-line:nth-child(5) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 7s;
+}
+
+.memory-popup.show .story-line:nth-child(6) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 8.5s;
+}
+
+.memory-popup.show .story-line:nth-child(7) {
+    opacity: 0.55;
+    transform: translateY(0);
+    transition-delay: 10s;
+}
+
+
+/* Important lines */
+
+.story-line.highlight {
+    font-size: 19px;
+}
+
+.story-line.final-line {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.story-line.small-final {
+    font-size: 14px;
+    margin-top: 25px;
+}
+/* =========================
+   STAR #2
+========================= */
+
+#star2 {
+    left: 72%;
+    top: 58%;
+    width: 15px;
+    height: 15px;
+
+    animation-delay: 1s;
+}
+/* =========================
+   RAIN MEMORY
+========================= */
+
+.rain-popup {
+    position: fixed;
+    inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 1s ease;
+
+    z-index: 300;
+}
+
+.rain-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rain-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(3, 8, 18, 0.65),
+            rgba(2, 5, 14, 0.9)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* Animated rain */
+
+.rain-layer,
+.rain-layer::before,
+.rain-layer::after {
+    position: absolute;
+    inset: -100px;
+
+    content: "";
+
+    background-image:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(255, 255, 255, 0.35) 49%,
+            transparent 50%
+        );
+
+    background-size: 35px 45px;
+
+    animation: rainfall 0.7s linear infinite;
+}
+
+.rain-layer::before {
+    transform: translateX(15px);
+    opacity: 0.35;
+}
+
+.rain-layer::after {
+    transform: translateX(-20px);
+    opacity: 0.2;
+}
+
+@keyframes rainfall {
+
+    from {
+        transform: translateY(-40px);
+    }
+
+    to {
+        transform: translateY(45px);
+    }
+
+}
+
+
+/* Rain memory card */
+
+.rain-memory {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(550px, 90%);
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(5, 10, 25, 0.78);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 60px rgba(100, 160, 200, 0.15);
+}
+
+.rain-date {
+    font-size: 12px;
+    letter-spacing: 4px;
+    opacity: 0.5;
+    margin-bottom: 18px;
+}
+
+.rain-memory h2 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.rain-story p {
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: 0.7;
+    margin: 15px 0;
+}
+
+.rain-story .rain-highlight {
+    opacity: 1;
+    font-size: 19px;
+}
+
+#closeRain {
+    margin-top: 20px;
+}
+/* =========================
+   STAR #3
+========================= */
+
+#star3 {
+    left: 48%;
+    top: 25%;
+    width: 17px;
+    height: 17px;
+
+    animation-delay: 0.5s;
+}
+/* =========================
+   STAR #3 — VAN INCIDENT
+========================= */
+
+.van-popup {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(3, 3, 10, 0.92);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.6s ease;
+
+    z-index: 400;
+
+    overflow: hidden;
+}
+
+.van-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.van-scene {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.van-title p {
+    font-size: 12px;
+    letter-spacing: 4px;
+
+    opacity: 0.5;
+
+    margin-bottom: 12px;
+}
+
+
+.van-title h2 {
+    font-size: 36px;
+
+    font-weight: 400;
+
+    margin-bottom: 45px;
+}
+
+
+/* Road */
+
+.van-road {
+    position: relative;
+
+    width: min(700px, 90%);
+
+    height: 150px;
+
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+
+    overflow: visible;
+}
+
+
+/* Van */
+
+.van {
+    position: absolute;
+
+    left: 5%;
+
+    bottom: 15px;
+
+    font-size: 65px;
+
+    animation: vanDrive 4s ease-in-out infinite;
+}
+
+
+@keyframes vanDrive {
+
+    0% {
+        left: 5%;
+    }
+
+    45% {
+        left: 42%;
+    }
+
+    55% {
+        left: 48%;
+    }
+
+    100% {
+        left: 85%;
+    }
+
+}
+
+
+/* Falling person */
+
+.person {
+    position: absolute;
+
+    left: 47%;
+
+    bottom: 50px;
+
+    font-size: 38px;
+
+    opacity: 0;
+
+    transform-origin: center;
+
+    animation: personFall 4s ease-in-out infinite;
+}
+
+
+@keyframes personFall {
+
+    0%,
+    40% {
+        opacity: 0;
+
+        transform:
+            rotate(0deg)
+            translateY(0);
+    }
+
+    45% {
+        opacity: 1;
+
+        transform:
+            rotate(90deg)
+            translateY(-20px);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            rotate(180deg)
+            translateY(25px);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            rotate(270deg)
+            translateY(55px);
+    }
+
+    85%,
+    100% {
+        opacity: 0;
+
+        transform:
+            rotate(360deg)
+            translateY(80px);
+    }
+
+}
+
+
+/* Story */
+
+.van-story {
+
+    width: min(550px, 90%);
+
+    margin-top: 30px;
+
+    min-height: 120px;
+}
+
+
+.van-story p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0;
+
+    margin: 8px 0;
+
+    animation: vanText 4s infinite;
+}
+
+
+#vanLine1 {
+    animation-delay: 0s;
+}
+
+#vanLine2 {
+    animation-delay: 1s;
+}
+
+#vanLine3 {
+    animation-delay: 2s;
+}
+
+#vanLine4 {
+    animation-delay: 3s;
+}
+
+
+@keyframes vanText {
+
+    0%,
+    20% {
+        opacity: 0;
+    }
+
+    25%,
+    80% {
+        opacity: 0.8;
+    }
+
+    90%,
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* Buttons */
+
+.van-scene button {
+    margin: 8px;
+}
+
+
+@media (max-width: 600px) {
+
+    .van-title h2 {
+        font-size: 28px;
+    }
+
+    .van {
+        font-size: 50px;
+    }
+
+    .person {
+        font-size: 30px;
+    }
+
+    .van-story p {
+        font-size: 15px;
+    }
+
+}
+/* =========================
+   STAR #4
+========================= */
+
+#star4 {
+    left: 78%;
+    top: 27%;
+    width: 19px;
+    height: 19px;
+
+    animation-delay: 1.5s;
+}
+/* =========================
+   STAR #4 — PANNI KUTTI
+========================= */
+
+.panni-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(80, 70, 100, 0.25),
+            rgba(2, 3, 12, 0.96)
+        );
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.8s ease;
+
+    z-index: 500;
+}
+
+.panni-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.panni-card {
+    position: relative;
+
+    width: min(520px, 90%);
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(15, 16, 35, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 80px rgba(180, 160, 220, 0.12);
+
+    transform: scale(0.85) translateY(30px);
+
+    transition: 0.8s ease;
+}
+
+.panni-popup.show .panni-card {
+    transform: scale(1) translateY(0);
+}
+
+
+.panni-glow {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    animation: panniGlow 2s ease-in-out infinite;
+}
+
+
+@keyframes panniGlow {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+
+}
+
+
+.panni-small {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+
+    margin-bottom: 15px;
+}
+
+
+.panni-card h2 {
+    font-size: 28px;
+
+    font-weight: 400;
+
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+}
+
+
+.nickname-line {
+    width: 60px;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    margin: 0 auto 25px;
+}
+
+
+.nickname-intro {
+    font-size: 15px;
+
+    opacity: 0.55;
+
+    margin-bottom: 8px;
+}
+
+
+.panni-card h1 {
+    font-size: 46px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+.panni-message {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    opacity: 0.65;
+
+    margin: 14px auto;
+
+    max-width: 420px;
+}
+
+
+#closePanni {
+    margin-top: 25px;
+}
+
+
+@media (max-width: 600px) {
+
+    .panni-card {
+        padding: 40px 22px;
+    }
+
+    .panni-card h2 {
+        font-size: 24px;
+    }
+
+    .panni-card h1 {
+        font-size: 37px;
+    }
+
+    .panni-message {
+        font-size: 15px;
+    }
+
+}
+/* =========================
+   STAR #5
+========================= */
+
+#star5 {
+    left: 18%;
+    top: 70%;
+    width: 20px;
+    height: 20px;
+
+    animation-delay: 2s;
+}
+/* =========================
+   STAR #5 — THE WAY YOU LOVE
+========================= */
+
+.love-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(90, 70, 110, 0.2),
+            rgba(2, 3, 12, 0.96)
+        );
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.8s ease;
+
+    z-index: 600;
+}
+
+.love-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.love-card {
+    width: min(540px, 90%);
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background: rgba(14, 15, 32, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 70px rgba(190, 150, 220, 0.12);
+
+    transform: scale(0.9);
+
+    transition: 0.8s ease;
+}
+
+.love-popup.show .love-card {
+    transform: scale(1);
+}
+
+
+/* Little glowing orbit */
+
+.love-orbit {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: lovePulse 2.5s ease-in-out infinite;
+}
+
+.love-orbit span {
+    font-size: 22px;
+}
+
+
+@keyframes lovePulse {
+
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    50% {
+        transform: scale(1.15);
+        box-shadow: 0 0 30px rgba(255,255,255,0.15);
+    }
+
+}
+
+
+.love-small {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.45;
+
+    margin-bottom: 15px;
+}
+
+
+.love-card h2 {
+    font-size: 36px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+
+.love-line {
+    width: 60px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    margin: 0 auto 28px;
+}
+
+
+.love-story p {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    opacity: 0.65;
+
+    margin: 16px 0;
+}
+
+
+.love-story .love-highlight {
+    opacity: 1;
+
+    font-size: 18px;
+}
+
+
+.love-story .love-final {
+    opacity: 0.9;
+
+    font-size: 18px;
+
+    margin-top: 25px;
+}
+
+
+#closeLove {
+    margin-top: 25px;
+}
+
+
+@media (max-width: 600px) {
+
+    .love-card {
+        padding: 40px 22px;
+    }
+
+    .love-card h2 {
+        font-size: 29px;
+    }
+
+    .love-story p {
+        font-size: 15px;
+    }
+
+}
+/* =========================
+   STAR #6
+========================= */
+
+#star6 {
+    left: 55%;
+    top: 75%;
+    width: 18px;
+    height: 18px;
+
+    animation-delay: 2.5s;
+}
+/* =========================
+   STAR #6 — MUSIC ROOM
+========================= */
+
+.music-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 45, 90, 0.35),
+            rgba(2, 3, 12, 0.97)
+        );
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.8s ease;
+
+    z-index: 700;
+}
+
+.music-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.music-card {
+    width: min(500px, 90%);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        rgba(10, 13, 30, 0.92);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 80px rgba(100, 140, 220, 0.15);
+
+    transform: scale(0.85);
+
+    transition: 0.8s ease;
+}
+
+.music-popup.show .music-card {
+    transform: scale(1);
+}
+
+
+.music-small {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+
+    margin-bottom: 28px;
+}
+
+
+/* Vinyl */
+
+.vinyl {
+    width: 155px;
+    height: 155px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #111 0px,
+            #111 2px,
+            #181818 3px,
+            #111 5px
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 0 35px rgba(255, 255, 255, 0.08);
+
+    animation: vinylSpin 7s linear infinite;
+
+    animation-play-state: paused;
+}
+
+
+.music-popup.playing .vinyl {
+    animation-play-state: running;
+}
+
+
+@keyframes vinylSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.vinyl-center {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #171717;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    border: 2px solid rgba(255,255,255,0.15);
+}
+
+
+.music-card h2 {
+    font-size: 32px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+
+.music-artist {
+    font-size: 14px;
+
+    opacity: 0.5;
+
+    margin-bottom: 25px;
+}
+
+
+.music-message {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    opacity: 0.65;
+
+    margin-bottom: 28px;
+}
+
+
+.music-card button {
+    display: block;
+
+    margin: 10px auto;
+}
+
+
+#playSong {
+    min-width: 170px;
+}
+
+
+@media (max-width: 600px) {
+
+    .music-card {
+        padding: 40px 22px;
+    }
+
+    .vinyl {
+        width: 130px;
+        height: 130px;
+    }
+
+    .music-card h2 {
+        font-size: 28px;
+    }
+
+}
+/* =========================
+   STAR #7
+========================= */
+
+#star7 {
+    left: 33%;
+    top: 48%;
+    width: 16px;
+    height: 16px;
+
+    animation-delay: 3s;
+}
+/* =========================
+   STAR #7 — OUR PLACES
+========================= */
+
+.travel-popup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 55, 90, 0.3),
+            rgba(2, 3, 12, 0.97)
+        );
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.8s ease;
+
+    z-index: 800;
+}
+
+.travel-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.travel-card {
+    width: min(600px, 92%);
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(10, 14, 30, 0.92);
+
+    border: 1px solid rgba(255,255,255,0.13);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 80px rgba(100,150,220,0.12);
+
+    transform: scale(0.85);
+
+    transition: 0.8s ease;
+}
+
+.travel-popup.show .travel-card {
+    transform: scale(1);
+}
+
+
+.travel-small {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.45;
+
+    margin-bottom: 15px;
+}
+
+
+.travel-card h2 {
+    font-size: 34px;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+}
+
+
+.travel-intro {
+    font-size: 15px;
+
+    opacity: 0.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* Destination cards */
+
+.destinations {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.destination {
+    min-height: 160px;
+
+    padding: 25px 15px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.03);
+
+    color: inherit;
+
+    cursor: pointer;
+
+    transition: 0.4s ease;
+
+    font-family: inherit;
+}
+
+
+.destination:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255,255,255,0.07);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
+}
+
+
+.destination-icon {
+    display: block;
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+
+.destination-name {
+    display: block;
+
+    font-size: 23px;
+
+    margin-bottom: 7px;
+}
+
+
+.destination-text {
+    display: block;
+
+    font-size: 13px;
+
+    opacity: 0.5;
+}
+
+
+/* Message */
+
+.destination-message {
+    min-height: 85px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: 0.5s ease;
+}
+
+
+.destination-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+#destinationTitle {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+#destinationText {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    opacity: 0.65;
+}
+
+
+#closeTravel {
+    margin-top: 10px;
+}
+
+
+@media (max-width: 600px) {
+
+    .travel-card {
+        padding: 38px 20px;
+    }
+
+    .travel-card h2 {
+        font-size: 28px;
+    }
+
+    .destinations {
+        grid-template-columns: 1fr;
+    }
+
+    .destination {
+        min-height: 125px;
+    }
+
+}
+/* =========================
+   STAR #8 — THE FINAL STAR
+========================= */
+
+#star8 {
+    left: 88%;
+    top: 82%;
+    width: 23px;
+    height: 23px;
+
+    animation-delay: 3.5s;
+}
+/* =========================
+   STAR #8 — FINAL FINALE
+========================= */
+
+.final-popup {
+    position: fixed;
+    inset: 0;
+
+    background: #02030b;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 1.5s ease;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+}
+
+.final-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.final-scene {
+    min-height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Background stars */
+
+.final-stars,
+.final-stars::before,
+.final-stars::after {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+
+    background-size:
+        90px 90px,
+        140px 140px;
+
+    background-position:
+        10px 20px,
+        50px 70px;
+
+    animation: finalStarsMove 15s linear infinite;
+}
+
+.final-stars::before {
+    transform: scale(1.4);
+
+    opacity: 0.25;
+
+    animation-duration: 25s;
+}
+
+.final-stars::after {
+    transform: scale(0.8);
+
+    opacity: 0.35;
+
+    animation-duration: 20s;
+}
+
+
+@keyframes finalStarsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(90px);
+    }
+
+}
+
+
+/* Content */
+
+.final-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(650px, 92%);
+
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+
+.final-small {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    opacity: 0.4;
+
+    margin-bottom: 25px;
+}
+
+
+.final-content h2 {
+
+    font-size: 38px;
+
+    font-weight: 300;
+
+    margin-bottom: 25px;
+}
+
+
+.final-divider {
+
+    width: 70px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.3);
+
+    margin: 0 auto 35px;
+}
+
+
+/* Story */
+
+.final-story p {
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    margin: 18px 0;
+
+}
+
+
+/* Reveal animation */
+
+.final-popup.show .final-story p:nth-child(1) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 1s;
+}
+
+.final-popup.show .final-story p:nth-child(2) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 3s;
+}
+
+.final-popup.show .final-story p:nth-child(3) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 5s;
+}
+
+.final-popup.show .final-story p:nth-child(4) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 7s;
+}
+
+.final-popup.show .final-story p:nth-child(5) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 9s;
+}
+
+.final-popup.show .final-story p:nth-child(6) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 11s;
+}
+
+.final-popup.show .final-story p:nth-child(7) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 12.5s;
+}
+
+.final-popup.show .final-story p:nth-child(8) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 14s;
+}
+
+.final-popup.show .final-story p:nth-child(9) {
+    animation: finalReveal 1s forwards;
+    animation-delay: 15.5s;
+}
+
+
+@keyframes finalReveal {
+
+    to {
+
+        opacity: 0.75;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Important lines */
+
+.final-story .final-highlight {
+
+    font-size: 19px;
+
+    opacity: 0;
+
+}
+
+
+.final-story .final-big {
+
+    font-size: 46px;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+}
+
+
+.final-story .final-forever {
+
+    font-size: 34px;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    margin-top: 35px;
+}
+
+
+/* Signature */
+
+.final-signature {
+
+    margin-top: 45px;
+
+    opacity: 0;
+
+    animation: signatureReveal 1.5s forwards;
+
+    animation-delay: 17.5s;
+}
+
+.final-signature p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    opacity: 0.55;
+
+    margin: 3px;
+}
+
+
+.final-signature strong {
+
+    opacity: 1;
+}
+
+
+/* Button */
+
+#closeFinal {
+
+    margin-top: 35px;
+
+    opacity: 0;
+
+    animation: signatureReveal 1.5s forwards;
+
+    animation-delay: 19s;
+}
+
+
+@keyframes signatureReveal {
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .final-scene {
+
+        padding: 50px 15px;
+
+    }
+
+    .final-content h2 {
+
+        font-size: 29px;
+
+    }
+
+    .final-story p {
+
+        font-size: 15px;
+
+    }
+
+    .final-story .final-big {
+
+        font-size: 36px;
+
+    }
+
+    .final-story .final-forever {
+
+        font-size: 28px;
+
+    }
+
+}
+/* =========================
+   FINAL MOBILE POLISH
+========================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+
+/* Make stars easier to tap on phones */
+
+.special-star {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* Prevent text from accidentally overflowing */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Small phones */
+
+@media (max-width: 480px) {
+
+    .special-star {
+        transform: scale(0.9);
+    }
+
+    button {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+
+}
+
+
+/* Very small screens */
+
+@media (max-width: 360px) {
+
+    .panni-card,
+    .love-card,
+    .music-card,
+    .travel-card {
+        width: 94%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+}
